@@ -1,4 +1,5 @@
-@import url('./reset.css');
+@import 'modern-normalize/modern-normalize.css';
+@import url('./reset.css'); 
 @import url('./container.css');
 /* Sections style */
 @import url('./header.css');
