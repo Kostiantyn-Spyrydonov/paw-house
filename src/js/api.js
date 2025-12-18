@@ -2,16 +2,15 @@ import axios from 'axios';
 
 const BASE_URL = 'https://paw-hut.b.goit.study/api';
 
-
 // get category
 export async function getCategories() {
   try {
     const response = await fetch(`${BASE_URL}/categories`);
-    
+
     if (!response.ok) {
       throw new Error(`Помилка: ${response.status}`);
     }
-    
+
     const data = await response.json();
     return data;
   } catch (error) {
@@ -27,17 +26,17 @@ export async function getAnimals({ page = 1, limit = 9, category = '' } = {}) {
       page: page,
       limit: limit,
     });
-    
+
     if (category && category !== 'all') {
       params.append('category', category);
     }
-    
+
     const response = await fetch(`${BASE_URL}/animals?${params}`);
-    
+
     if (!response.ok) {
       throw new Error(`Помилка: ${response.status}`);
     }
-    
+
     const data = await response.json();
     return data;
   } catch (error) {
@@ -50,11 +49,11 @@ export async function getAnimals({ page = 1, limit = 9, category = '' } = {}) {
 export async function getFeedbacks() {
   try {
     const response = await fetch(`${BASE_URL}/feedbacks`);
-    
+
     if (!response.ok) {
       throw new Error(`Помилка: ${response.status}`);
     }
-    
+
     const data = await response.json();
     return data;
   } catch (error) {
@@ -78,12 +77,12 @@ export async function createOrder({ name, phone, comment = '', animalId }) {
         animalId: animalId,
       }),
     });
-    
+
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData.message || `Помилка: ${response.status}`);
     }
-    
+
     const data = await response.json();
     return data;
   } catch (error) {

@@ -116,3 +116,7 @@ initAboutSlider();
 import { initFaq } from './js/FAQ.js';
 
 initFaq();
+
+// Success stories //
+import { fetchStories } from './js/success-stories.js';
+fetchStories();
