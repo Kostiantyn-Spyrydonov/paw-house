@@ -104,3 +104,10 @@ loadMoreBtn.addEventListener('click', () => {
 //  if (!animal) return;
  // openPetModal(animal);
 // });
+
+
+
+// about us
+import { initAboutSlider } from './js/about-us.js';
+
+initAboutSlider();
