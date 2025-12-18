@@ -106,6 +106,7 @@ display: block;
 }
 
 .take-div {
+    cursor: pointer;
 margin-left: auto;
 
     width: 130px;
@@ -189,6 +190,7 @@ flex-direction: column;
 }
 
 .menu-take-div {
+    cursor: pointer;
     border: 1px solid #88765c;
     border-radius: 8px;
     padding: 8px 20px;

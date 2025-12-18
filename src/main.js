@@ -18,6 +18,7 @@ import Raty from 'raty-js';
 const mobileMenu = document.querySelector(".mobile-menu");
 const burgerButton = document.querySelector(".burger-button");
 const closeButton = document.querySelector(".close-button");
+const menuContainer = document.querySelector(".menu-container");
 
 const toggleMenu = () => {
   mobileMenu.classList.toggle("is-open");
@@ -26,6 +27,12 @@ const toggleMenu = () => {
 
 burgerButton.addEventListener("click", toggleMenu);
 closeButton.addEventListener("click", toggleMenu);
+
+menuContainer.addEventListener("click", (e) => {
+  if (e.target.nodeName === "A" || "menu-take-div") {
+    toggleMenu();
+  }
+});
 
 mobileMenu.addEventListener("click", (e) => {
   if (e.target === mobileMenu) toggleMenu();
