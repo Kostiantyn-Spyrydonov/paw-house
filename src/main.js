@@ -111,3 +111,8 @@ loadMoreBtn.addEventListener('click', () => {
 import { initAboutSlider } from './js/about-us.js';
 
 initAboutSlider();
+
+// FAQ
+import { initFaq } from './js/FAQ.js';
+
+initFaq();
