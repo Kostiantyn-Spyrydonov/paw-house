@@ -31,7 +31,7 @@ window.addEventListener("keydown", (e) => {
 /* Pets List */
 import { fetchCategories, fetchAnimals } from './js/pets-list-api.js';
 import { renderFilters, renderAnimals } from './js/pets-list-render.js';
-import { openPetModal } from "./js/animal-details-modal";
+// import { openPetModal } from "./js/animal-details-modal";
 
 const filtersEl = document.querySelector('.js-filters');
 const petsListEl = document.querySelector('.js-pets-list');
@@ -96,11 +96,11 @@ loadMoreBtn.addEventListener('click', () => {
   loadAnimals();
 });
 
-petsListEl.addEventListener('click', e => {
-  const btn = e.target.closest('.pet-btn');
-  if (!btn) return;
-  const animalId = btn.dataset.animalId;
-  const animal = allAnimals.find(a => a._id === animalId);
-  if (!animal) return;
-  openPetModal(animal);
-});
+// petsListEl.addEventListener('click', e => {
+// const btn = e.target.closest('.pet-btn');
+//  if (!btn) return;
+//  const animalId = btn.dataset.animalId;
+//  const animal = allAnimals.find(a => a._id === animalId);
+//  if (!animal) return;
+ // openPetModal(animal);
+// });
