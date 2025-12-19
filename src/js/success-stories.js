@@ -8,9 +8,9 @@ import { getFeedbacks } from './api.js';
 
 import Raty from 'raty-js';
 
-import starOn from 'raty-js/src/images/star-on.png';
-import starOff from 'raty-js/src/images/star-off.png';
-import starHalf from 'raty-js/src/images/star-half.png';
+import starOn from '/img/raty/star-filled.svg';
+import starOff from '/img/raty/star-outline.svg';
+import starHalf from '/img/raty/star-half.svg';
 
 import Swal from 'sweetalert2';
 
@@ -22,7 +22,7 @@ export async function fetchStories() {
     new Swiper('.swiper-stories', {
       modules: [Navigation, Pagination],
       pagination: {
-        el: '.swiper-pagination',
+        el: document.querySelector('.stories-controls .swiper-pagination'),
         dynamicBullets: true,
         clickable: true,
       },
