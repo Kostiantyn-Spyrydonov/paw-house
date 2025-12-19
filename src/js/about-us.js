@@ -14,7 +14,7 @@ export function initAboutSlider() {
     },
 
     pagination: {
-      el: '.about-pagination',
+      el: document.querySelector('.why-paws-controls .swiper-pagination'),
       clickable: true,
     },
   });
