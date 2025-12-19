@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { getFeedbacks } from './api';
+import { getFeedbacks } from './api.js';
 
 import Raty from 'raty-js';
 
@@ -49,7 +49,7 @@ export async function fetchStories() {
 }
 
 export function renderStories(stories) {
-  const ul = document.querySelector('.swiper-wrapper');
+  const ul = document.querySelector('.swiper-stories .swiper-wrapper');
   const li = stories
     .map(
       story => `<li class="swiper-slide" id="${story._id}">       

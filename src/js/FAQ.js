@@ -1,3 +1,5 @@
+import Accordion from 'accordion-js';
+
 export function initFaq() {
 
     new Accordion('.faq',
