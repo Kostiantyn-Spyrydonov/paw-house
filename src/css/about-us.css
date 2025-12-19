@@ -1,0 +1,174 @@
+.why-paws {
+  padding: 32px 0;
+}
+
+.why-paws__title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.about-wrapper {
+  position: relative;
+}
+
+.about-swiper {
+  overflow: hidden;
+}
+
+.about-swiper .swiper-slide {
+  position: relative;
+}
+
+.about-swiper .slide-image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about-swiper .slide-content {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.about-btn-prev,
+.about-btn-next {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #c2b39d;
+  background: #f8f6f3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.about-btn-prev:hover,
+.about-btn-next:hover {
+  border-color: #606161;
+}
+
+.about-btn-prev.is-disabled,
+.about-btn-next.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.arrow-icon {
+  width: 18px;
+  height: 18px;
+  fill: #000;
+}
+
+/* Pagination */
+.about-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.about-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #c2b39d;
+  opacity: 0.5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.about-pagination .swiper-pagination-bullet-active {
+  background: #000;
+  opacity: 1;
+}
+
+/* Mobile less than 767px */
+@media (max-width: 767px) {
+  .about-wrapper {
+    display: block;
+  }
+
+  .about-btn-prev,
+  .about-btn-next {
+    position: static;
+    display: inline-flex;
+  }
+
+  .about-wrapper::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .about-btn-prev {
+    position: absolute;
+    bottom: -64px;
+    right: 56px;
+  }
+
+  .about-btn-next {
+    position: absolute;
+    bottom: -64px;
+    right: 0;
+  }
+
+  .about-pagination {
+    justify-content: flex-start;
+  }
+}
+
+/* Tablet 768px */
+@media (min-width: 768px) {
+  .why-paws__title {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .about-swiper .slide-content {
+    left: 48px;
+    bottom: 48px;
+    font-size: 16px;
+    max-width: 420px;
+  }
+
+  .about-btn-prev,
+  .about-btn-next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+  }
+
+  .about-btn-prev {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .about-btn-next {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+}
+
+/*  Desktop 1440px */
+@media (min-width: 1440px) {
+  .why-paws__title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .about-swiper .slide-content {
+    left: 64px;
+    bottom: 64px;
+    font-size: 18px;
+    max-width: 548px;
+  }
+}
