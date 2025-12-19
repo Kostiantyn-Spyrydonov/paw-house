@@ -61,6 +61,6 @@ content.addEventListener('click', e => {
 
   if (e.target.closest('[data-adopt]')) {
     closePetModal();
-    openApplicationModal();
+    openOrderModal(animal.id);
   }
 });

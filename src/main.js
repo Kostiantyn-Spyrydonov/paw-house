@@ -32,8 +32,10 @@ if (mobileMenu && burgerButton && closeButton) {
 }
 
 /* Pets List */
+/* Pets List */
 import { fetchCategories, fetchAnimals } from './js/pets-list-api.js';
 import { renderFilters, renderAnimals } from './js/pets-list-render.js';
+import { openPetModal } from './js/animal-details-modal.js';
 
 const filtersEl = document.querySelector('.js-filters');
 const petsListEl = document.querySelector('.js-pets-list');
@@ -98,6 +100,16 @@ if (filtersEl && petsListEl && loadMoreBtn) {
     page += 1;
     loadAnimals();
   });
+
+  // open animal-details-modal
+  petsListEl.addEventListener('click', e => {
+    const btn = e.target.closest('.pet-btn');
+    if (!btn) return;
+    const animalId = btn.dataset.animalId;
+    const animal = allAnimals.find(a => a._id === animalId);
+    if (!animal) return;
+    openPetModal(animal);
+  });
 }
 
 // about us
@@ -110,7 +122,5 @@ initFaq();
 
 
 // Success stories //
-import './js/animal-details-modal';
-
 import { fetchStories } from './js/success-stories.js';
 fetchStories();
