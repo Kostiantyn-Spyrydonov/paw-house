@@ -5,8 +5,11 @@ const res = await fetch(`${BASE_URL}/api/categories`);
 return res.json();
 }
 
-export async function fetchAnimals({ page, limit }) {
+export async function fetchAnimals({ page, limit, categoryId}) {
 const params = new URLSearchParams({ page, limit });
+if(categoryId){
+    params.append('categoryId',categoryId)
+}
 
 const res = await fetch(`${BASE_URL}/api/animals?${params}`);
 

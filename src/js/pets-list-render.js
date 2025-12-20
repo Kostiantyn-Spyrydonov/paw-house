@@ -8,9 +8,10 @@
         </button>
         </li>
         ${categories
-        .map(({ name }) => `
+        .map(({_id, name }) => `
             <li>
-            <button class="filter-btn" data-category="${name}">
+            <button class="filter-btn" 
+            data-category-id="${_id}">
                 ${name}
             </button>
             </li>
@@ -27,7 +28,7 @@
             .join('');
 
         return `
-            <li class="pet-card" data-id="${animal._id}">
+            <li class="pet-card">
             <img src="${animal.image}" alt="${animal.name}">
 
             <p class="pet-type">${animal.species}</p>
@@ -46,8 +47,10 @@
                 ${animal.shortDescription}
             </p>
 
-            <button class="pet-btn" data-animal-id="${animal._id}">
-                Дізнатись більше
+            <button 
+                class="pet-btn" 
+                data-animal-id="${animal._id}">
+                    Дізнатись більше
             </button>
             </li>
         `;

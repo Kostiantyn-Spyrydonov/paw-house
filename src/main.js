@@ -24,7 +24,7 @@ import Raty from 'raty-js';
     const loadMoreBtn = document.querySelector('.js-load-more');
 
     let page = 1;
-    let category = '';
+    let categoryId = null;
     const limit = 9;
     let allAnimals = [];
 
@@ -36,9 +36,15 @@ import Raty from 'raty-js';
     loadAnimals(true);
     }
 
+    function showLoader(){
+        petsListEl.innerHTML = '<li>Завантаження...</li>'
+    }
+
     async function loadAnimals(reset = false) {
     try {
-        const data = await fetchAnimals({ page, limit });
+        showLoader()
+
+        const data = await fetchAnimals({ page, limit, categoryId});
 
         if (!Array.isArray(data.animals)) {
         petsListEl.innerHTML = '<p>Нічого не знайдено</p>';
@@ -51,17 +57,11 @@ import Raty from 'raty-js';
         allAnimals = [...allAnimals, ...data.animals];
         }
 
-        let visibleAnimals = allAnimals;
+        
 
-        if (category) {
-        visibleAnimals = allAnimals.filter(animal =>
-            animal.categories.some(c => c.name === category)
-        );
-        }
+        petsListEl.innerHTML = renderAnimals(allAnimals);
 
-        petsListEl.innerHTML = renderAnimals(visibleAnimals);
-
-        if (page * limit >= data.totalItems) {
+        if (allAnimals.length >= data.totalItems) {
         loadMoreBtn.style.display = 'none';
         } else {
         loadMoreBtn.style.display = 'block';
@@ -82,7 +82,7 @@ import Raty from 'raty-js';
 
     e.target.classList.add('active');
 
-    category = e.target.dataset.category;
+    categoryId = e.target.dataset.categoryId || null;
     page = 1;
 
     loadAnimals(true);
