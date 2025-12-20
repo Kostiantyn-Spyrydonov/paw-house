@@ -40,10 +40,11 @@ form.addEventListener('submit', async e => {
   form.classList.add('was-submitted');
 
   const { name, phone, comment } = e.target.elements;
+  const phoneNormalized = phone.value.replace(/\D/g, '');
 
   const orderData = {
     name: name.value.trim(),
-    phone: phone.value.trim(),
+    phone: phoneNormalized,
     comment: comment.value.trim(),
     animalId: currentAnimalId,
   };
@@ -67,6 +68,24 @@ form.addEventListener('submit', async e => {
     return;
   }
 
+  if (orderData.phone.length !== 12) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Помилка',
+      text: 'Невірний номер телефону.',
+    });
+    return;
+  }
+
+  if (!orderData.comment) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Помилка',
+      text: 'Додайте коментар.',
+    });
+    return;
+  }
+
   try {
     const res = await fetch(`${API_BASE}/orders`, {
       method: 'POST',
@@ -74,7 +93,9 @@ form.addEventListener('submit', async e => {
       body: JSON.stringify(orderData),
     });
 
-    if (!res.ok) throw new Error('API error');
+    if (!res.ok) {
+      throw new Error('API error');
+    }
 
     Swal.fire({
       icon: 'success',
