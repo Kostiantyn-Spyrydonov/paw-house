@@ -8,6 +8,7 @@ let currentAnimal = null; /* new */
 
 export function openPetModal(animal) {
   currentAnimal = animal;
+
   content.innerHTML = createModalMarkup(animal);
 
   backdrop.classList.remove('is-hidden');
