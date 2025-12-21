@@ -19,75 +19,83 @@ const petsListEl = document.querySelector('.js-pets-list');
 const loadMoreBtn = document.querySelector('.js-load-more');
 
 if (filtersEl && petsListEl && loadMoreBtn) {
-  let page = 1;
-  let categoryId = null;
-  const limit = 9;
-  let allAnimals = [];
+    let page = 1;
+    let categoryId = null;
+    let limit = getLimitByViewport();
+    let allAnimals = [];
 
-  init();
+function getLimitByViewport() {
+    return window.innerWidth >= 1440 ? 9 : 8;
+}
 
-  async function init() {
+window.addEventListener('resize', () => {
+    limit = getLimitByViewport();
+});
+
+    init();
+
+async function init() {
     const categories = await fetchCategories();
     filtersEl.innerHTML = renderFilters(categories);
     loadAnimals(true);
-  }
+}
 
-  function showLoader() {
+function showLoader() {
     petsListEl.innerHTML = '<li>Завантаження...</li>';
-  }
+}
 
-  async function loadAnimals(reset = false) {
+async function loadAnimals(reset = false) {
     try {
-      showLoader();
-      const data = await fetchAnimals({ page, limit, categoryId });
-      if (!Array.isArray(data.animals)) {
+        showLoader();
+        const data = await fetchAnimals({ page, limit, categoryId });
+        if (!Array.isArray(data.animals)) {
         petsListEl.innerHTML = '<p>Нічого не знайдено</p>';
         return;
-      }
-      if (reset) {
-        allAnimals = data.animals;
-      } else {
-        allAnimals = [...allAnimals, ...data.animals];
-      }
-
-      petsListEl.innerHTML = renderAnimals(allAnimals);
-
-      if (allAnimals.length >= data.totalItems) {
-        loadMoreBtn.style.display = 'none';
-      } else {
-        loadMoreBtn.style.display = 'block';
-      }
-    } catch (error) {
-      console.error(error);
-      petsListEl.innerHTML = '<p>Помилка завантаження даних</p>';
     }
-  }
+    if (reset) {
+        allAnimals = data.animals;
+    } else {
+        allAnimals = [...allAnimals, ...data.animals];
+    }
 
-  filtersEl.addEventListener('click', e => {
+    petsListEl.innerHTML = renderAnimals(allAnimals);
+
+    if (allAnimals.length >= data.totalItems) {
+        loadMoreBtn.style.display = 'none';
+    } else {
+        loadMoreBtn.style.display = 'block';
+    }
+    } catch (error) {
+        console.error(error);
+        petsListEl.innerHTML = '<p>Помилка завантаження даних</p>';
+    }
+    }
+
+filtersEl.addEventListener('click', e => {
     if (!e.target.classList.contains('filter-btn')) return;
     document
-      .querySelectorAll('.filter-btn')
-      .forEach(btn => btn.classList.remove('active'));
+        .querySelectorAll('.filter-btn')
+        .forEach(btn => btn.classList.remove('active'));
     e.target.classList.add('active');
     categoryId = e.target.dataset.categoryId || null;
     page = 1;
     loadAnimals(true);
-  });
+});
 
-  loadMoreBtn.addEventListener('click', () => {
+loadMoreBtn.addEventListener('click', () => {
     page += 1;
     loadAnimals();
-  });
+});
 
   // open animal-details-modal
-  petsListEl.addEventListener('click', e => {
+petsListEl.addEventListener('click', e => {
     const btn = e.target.closest('.pet-btn');
     if (!btn) return;
     const animalId = btn.dataset.animalId;
     const animal = allAnimals.find(a => a._id === animalId);
     if (!animal) return;
     openPetModal(animal);
-  });
+});
 }
 
 // about us
