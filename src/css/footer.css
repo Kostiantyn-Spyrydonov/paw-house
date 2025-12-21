@@ -3,6 +3,7 @@
    ======================= */
 
 .footer {
+  min-width: 320px;
   background-color: #c7b8a1;
   color: #1f1a15;
   padding: 48px 0;
