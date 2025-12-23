@@ -25,3 +25,6 @@ dist-ssr
 
 #pull requests list
 pullrequests-list.txt
+
+#node-modules
+node_modules/

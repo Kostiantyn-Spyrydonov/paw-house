@@ -91,7 +91,7 @@
   color: #02060a;
   position: static;
   margin: 0;
-  transition: all 0.2s ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @media screen and (min-width: 1440px) {

@@ -1,0 +1,147 @@
+.faq {
+  padding: 64px 0;
+}
+
+.faq-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3eee8;
+  max-width: 864px;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.faq-question:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.faq-question-text {
+  flex: 1;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 239px;
+}
+
+.faq-question .icon {
+  flex-shrink: 0;
+  font-size: 22px;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Закритий стан */
+.faq-item .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* Відкритий стан */
+
+.faq-item.active .faq-answer {
+  max-height: 600px;
+  padding: 0 24px 24px 24px;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer p {
+  margin: 14px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.faq-list {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.faq-list li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.faq-list--numbered {
+  list-style: decimal;
+}
+
+.faq-list--bulleted {
+  list-style: disc;
+}
+
+/* ===== TABLET 768px ===== */
+@media (min-width: 768px) {
+  .faq-title {
+    margin-bottom: 80px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .faq-question-text {
+    max-width: none;
+  }
+
+  .faq-question .icon {
+    font-size: 24px;
+  }
+
+  .faq-item .faq-answer {
+    padding: 0 20px;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 24px 24px;
+  }
+}
+
+/* ===== DESKTOP 1440px ===== */
+@media (min-width: 1440px) {
+  .faq {
+    padding: 80px 0;
+  }
+
+  .faq-container {
+    max-width: 1312px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-title {
+    font-size: 48px;
+  }
+
+  .faq-question {
+    font-size: 17px;
+  }
+
+  .faq-question-text {
+    font-size: 18px;
+  }
+}

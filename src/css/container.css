@@ -11,14 +11,6 @@ body {
   background-color: #f6f4f1;
 }
 
-.section {
-  padding: 64px 0;
-}
-
-.footer {
-  padding: 48px 0;
-}
-
 .container {
   min-width: 320px;
   max-width: 375px;
@@ -34,14 +26,6 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
-  .section {
-    padding: 80px 0;
-  }
-
-  .footer {
-    padding: 64px 0;
-  }
-
   .container {
     max-width: 1440px;
     padding: 0 64px;
