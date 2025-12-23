@@ -100,5 +100,5 @@ function hideStoryControls() {
   controls.classList.add('hidden');
 }
 
-}
+
 
