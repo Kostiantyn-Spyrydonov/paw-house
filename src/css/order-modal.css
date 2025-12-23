@@ -55,7 +55,7 @@
 
   border-radius: 50%;
   cursor: pointer;
-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 
   background: transparent;
   border: none;
@@ -136,13 +136,11 @@ transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   outline: none;
 }
 
-.was-submitted .order-input:required:invalid,
-.was-submitted .order-textarea:required:invalid {
+.was-submitted .order-input:required:invalid {
   border-color: #ae0000;
 }
 
-.was-submitted .order-input:required:invalid::placeholder,
-.was-submitted .order-textarea:required:invalid::placeholder {
+.was-submitted .order-input:required:invalid::placeholder {
   color: #ae0000;
 }
 

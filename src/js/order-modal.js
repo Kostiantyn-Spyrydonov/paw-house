@@ -45,9 +45,13 @@ form.addEventListener('submit', async e => {
   const orderData = {
     name: name.value.trim(),
     phone: phoneNormalized,
-    comment: comment.value.trim(),
     animalId: currentAnimalId,
   };
+
+  const commentValue = comment.value.trim();
+  if (commentValue) {
+    orderData.comment = commentValue;
+  }
 
   if (!orderData.animalId) {
     Swal.fire({ icon: 'error', title: 'Помилка', text: 'Не вибрано тварину.' });
@@ -73,15 +77,6 @@ form.addEventListener('submit', async e => {
       icon: 'error',
       title: 'Помилка',
       text: 'Невірний номер телефону.',
-    });
-    return;
-  }
-
-  if (!orderData.comment) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Помилка',
-      text: 'Додайте коментар.',
     });
     return;
   }
