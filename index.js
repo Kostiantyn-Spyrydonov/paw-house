@@ -67,13 +67,13 @@ import{S as c,a as k,N as C,P as E,A as N,R as U}from"./assets/vendor-C7it1eFs.j
         <source
           media="(max-width: 767px)"
           srcset="
-            ./img/hatinka-lapok/${t}-mob@1x.webp 1x,
-            ./img/hatinka-lapok/${t}-mob@2x.webp 2x
+            /img/hatinka-lapok/${t}-mob@1x.webp 1x,
+            /img/hatinka-lapok/${t}-mob@2x.webp 2x
           "
         >
         <img
-          src="./img/hatinka-lapok/${t}-tab-desk@1x.webp"
-          srcset="./img/hatinka-lapok/${t}-tab-desk@2x.webp 2x"
+          src="/img/hatinka-lapok/${t}-tab-desk@1x.webp"
+          srcset="/img/hatinka-lapok/${t}-tab-desk@2x.webp 2x"
           class="slide-image"
           alt="${i}"
         >
