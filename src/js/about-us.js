@@ -40,13 +40,13 @@ function createAboutSlides(slides) {
         <source
           media="(max-width: 767px)"
           srcset="
-            ./img/hatinka-lapok/${img}-mob@1x.webp 1x,
-            ./img/hatinka-lapok/${img}-mob@2x.webp 2x
+            /img/hatinka-lapok/${img}-mob@1x.webp 1x,
+            /img/hatinka-lapok/${img}-mob@2x.webp 2x
           "
         >
         <img
-          src="./img/hatinka-lapok/${img}-tab-desk@1x.webp"
-          srcset="./img/hatinka-lapok/${img}-tab-desk@2x.webp 2x"
+          src="/img/hatinka-lapok/${img}-tab-desk@1x.webp"
+          srcset="/img/hatinka-lapok/${img}-tab-desk@2x.webp 2x"
           class="slide-image"
           alt="${alt}"
         >
