@@ -1,23 +1,25 @@
 const top = document.querySelector('.top');
 
-function showScrollUpButton() {
-  top.classList.remove('hidden');
+function isDesktop() {
+  return window.innerWidth >= 768;
 }
 
-function hideScrollUpButton() {
-  top.classList.add('hidden');
-}
-
-window.addEventListener('scroll', scroll);
 export function scroll() {
+  if (!isDesktop()) {
+    top.classList.add('hidden');
+    return;
+  }
+
   if (window.scrollY > 400) {
-    showScrollUpButton();
+    top.classList.remove('hidden');
   } else {
-    hideScrollUpButton();
+    top.classList.add('hidden');
   }
 }
 
-top.addEventListener('click', scrollUp);
-export function scrollUp() {
+window.addEventListener('scroll', scroll);
+window.addEventListener('resize', scroll);
+
+top.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+});

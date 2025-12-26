@@ -12,7 +12,7 @@ import { openOrderModal } from './js/order-modal.js';
 
 import { initMobileMenu } from './js/header.js';
 
-import { scroll, scrollUp } from './js/scroll-top.js';
+import { scroll } from './js/scroll-top.js';
 
 /* Pets List */
 const filtersEl = document.querySelector('.js-filters');
@@ -136,4 +136,3 @@ initMobileMenu();
 
 // Scroll top/////
 scroll();
-scrollUp();
