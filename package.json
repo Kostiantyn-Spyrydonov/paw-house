@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/project-9/",
+    "build": "vite build --base=/paw-house/",
     "preview": "vite preview"
   },
   "devDependencies": {
