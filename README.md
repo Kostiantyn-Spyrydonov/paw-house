@@ -1,90 +1,117 @@
-# Хатинка Лапок 🐾
+> 🇺🇦 [Читати українською](README.uk.md)
 
-Веб-сайт притулку для тварин, створений для допомоги безпритульним чотирилапим
-знайти нову домівку.
+# Paw House 🐾
 
-🌐 [Переглянути демо](https://kostiantyn-spyrydonov.github.io/project-9/)
+A modern, responsive website for an animal shelter — helping homeless pets find
+loving families.
 
-### ✨ Основні можливості:
+🌐 **[Live Demo](https://kostiantyn-spyrydonov.github.io/paw-house/)**
 
-- **Каталог тварин:** Фільтрація карток за категоріями.
-- **Інтерактивність:** Слайдери для перегляду фото, відгуків та випадаючі списки
-  FAQ.
-- **Зворотний зв'язок:** Модальні вікна для оформлення заявки на всиновлення з
-  валідацією.
-- **Адаптивність:** Повна підтримка мобільних, планшетних та десктопних версій.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
 
-## 🛠 Технології
+## 📌 About
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- Vite
+A full-featured animal shelter website where users can browse available pets,
+filter by categories, view detailed information, and submit adoption
+applications.
 
-## 📚 Бібліотеки
+## 🚀 Key Features
 
-- Swiper.js
-- Accordion.js
-- SweetAlert2
-- basicLightbox
-- Raty.js
-- Axios
-- modern-normalize
+- **Dynamic Pet Catalog** — Smart filtering by categories.
+- **Adoption Pipeline** — Interactive pet details via modals and a validated
+  application system.
+- **Interactive UI** — Smooth carousels for success stories and accessible FAQ
+  accordions.
+- **Performance Focused** — Built with Vite for lightning-fast loading and
+  optimized assets.
 
-## ⚙️ Інструменти розробки:
+## 🛠 Tech Stack
 
-- Node.js — середовище виконання для розробки.
-- NPM — менеджер пакетів.
+- **Core:** HTML5, CSS3 (SCSS), JavaScript (ES6+)
+- **Build Tool:** Vite
+- **Key Libraries:**
+  - `Axios` (API Communication)
+  - `Swiper.js` (Complex Sliders)
+  - `SweetAlert2` (User Notifications)
+  - `Raty.js` (Rating System)
 
-## 🚀 Як запустити проєкт локально
+## 👨‍💼 My Role
 
-1. Клонуй репозиторій:
+### Team Lead
+
+Led a team of 9 developers from initial setup to deployment, ensuring smooth
+collaboration and consistent code quality throughout the project.
+
+**Key Responsibilities:**
+
+- **Project Architecture:** Designed repository structure, established coding
+  conventions, and configured automated deployment via GitHub Pages.
+- **Code Review:** Reviewed all Pull Requests, ensuring code consistency,
+  maintainability, and preventing technical debt.
+- **Integration & Debugging:** Resolved cross-section conflicts and critical
+  bugs arising from merging different team members' work.
+- **Technical Mentorship:** Supported team members with git workflows and coding
+  challenges.
+- **Project Presentation:** Successfully presented the final project to mentors,
+  demonstrating team achievements and technical solutions.
+
+  ## 👥 Project Team
+
+- **[Kostiantyn Spyrydonov](https://github.com/Kostiantyn-Spyrydonov)** — Team
+  Lead | Code Review, project architecture, project-wide debugging,project
+  presentation.
+- **[Oleksandr Chuienko](https://github.com/SANYA3315)** — Scrum Master | "FAQ"
+  section, workflow management, prepared final presentation.
+- **[Denys Boreiko](https://github.com/Denbor140)** — Developer | "Success
+  Stories" section, Code Review, project-wide debugging.
+- **[Sofiia Boiko](https://github.com/SofiX4)** — Developer | "Hero" section,
+  "Animal Details" modal, image preparation.
+- **[Stefaniia Momot](https://github.com/Stef-aniya)** — Developer | "Pets List"
+  section.
+- **[Maksym Kosohorov](https://github.com/banan717)** — Developer | "About Us"
+  section.
+- **[Artem Lypatov](https://github.com/Artemmm008)** — Developer | "Header"
+  section.
+- **[Yevhenii Artiukhov](https://github.com/Yevhen-Artiukhov)** — Developer |
+  "Footer" section.
+- **[Yuliia Malynovska](https://github.com/shadberry22)** — Developer | "Order
+  Modal" window.
+
+## 🚀 Run Locally
+
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/Kostiantyn-Spyrydonov/project-9.git
+git clone https://github.com/Kostiantyn-Spyrydonov/paw-house.git
 ```
 
-2. Перейди в папку проєкту:
+2. Navigate to project folder:
 
 ```bash
-cd project-9
+cd paw-house
 ```
 
-3. Встанови залежності:
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-4. Запусти локальний сервер:
+4. Start development server:
 
 ```bash
 npm run dev
 ```
 
-5. Відкрий в браузері:
+5. Open in browser:
 
 ```
 http://localhost:5173
 ```
 
-## 👥 Команда проєкту
+---
 
-- **[Костянтин Спиридонов](https://github.com/Kostiantyn-Spyrydonov)** — Team
-  Lead | Code Review, архітектура проєкту, Project-wide debugging.
-- **[Олександр Чуєнко](https://github.com/SANYA3315)** — Scrum Master | Секція
-  "FAQ", налагодження робочих процесів.
-- **[Денис Борейко](https://github.com/Denbor140)** — Developer | Секція
-  "Success Stories", Code Review, Project-wide debugging.
-- **[Cофія Бойко](https://github.com/SofiX4)** — Developer | Секція "Hero",
-  модальне вікно "Animal Details Modal", підготовка зображень.
-- **[Стефанія Момот](https://github.com/Stef-aniya)** — Developer | Секція "Pets
-  List".
-- **[Максим Косогоров](https://github.com/banan717)** — Developer | Секція
-  "About Us".
-- **[Артем Липатов](https://github.com/Artemmm008)** — Developer | Cекція
-  "Header".
-- **[Євгеній Артюхов](https://github.com/Yevhen-Artiukhov)** — Developer |
-  Секція "Footer".
-- **[Юлія Малиновська](https://github.com/shadberry22)** — Developer | Модальне
-  вікно "Order Modal".
+> 💡 _Note: Project was developed in Ukrainian._
